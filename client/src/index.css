@@ -1,0 +1,17 @@
+html,
+body,
+#root,
+.app {
+  height: 100%;
+  max-width: 100%;
+}
+
+.with-scroll-bar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.with-scroll-bar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
