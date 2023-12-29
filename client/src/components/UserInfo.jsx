@@ -69,8 +69,6 @@ const UserInfo = ({ userData = null, handleBeFriend = null }) => {
         />
       </FlexBetween>
 
-      <Typography color={main}>{userInfo.bio}</Typography>
-
       <Divider />
 
       {/* SECOND ROW */}

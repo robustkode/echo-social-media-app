@@ -41,19 +41,17 @@ const EditProfile = () => {
     _id,
     firstName,
     lastName,
-    bio,
+
     picturePath,
     location,
     occupation,
     email,
   } = useSelector((state) => state.user);
 
-  console.log(bio, location, occupation);
   const initialValues = {
     _id,
     firstName,
     lastName,
-    bio,
     location,
     occupation,
     email,
@@ -168,16 +166,7 @@ const EditProfile = () => {
                   helperText={touched.lastName && errors.lastName}
                   sx={{ gridColumn: "span 2" }}
                 />
-                <TextField
-                  label="Bio"
-                  onBlur={handleBlur}
-                  onChange={handleChange}
-                  value={values.bio}
-                  name="bio"
-                  error={Boolean(touched.location) && Boolean(errors.location)}
-                  helperText={touched.location && errors.location}
-                  sx={{ gridColumn: "span 4" }}
-                />
+
                 <TextField
                   label="Location"
                   onBlur={handleBlur}
