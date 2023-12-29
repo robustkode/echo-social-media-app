@@ -27,7 +27,7 @@ const Post = ({
   const navigate = useNavigate();
   const token = useSelector((state) => state.token);
   const { _id } = useSelector((state) => state.user);
-  const isLiked = Boolean(likes[_id]);
+  const isLiked = likes.some((like) => Object.keys(like)[0] === _id);
   const likeCount = Object.keys(likes).length;
 
   const { palette } = useTheme();
@@ -79,9 +79,9 @@ const Post = ({
         <img
           width="100%"
           height="auto"
-          alt="post"
           style={{ borderRadius: "0.75rem", marginTop: "0.75rem" }}
           src={`http://localhost:3001/assets/${picturePath}`}
+          onerror="this.style.display = 'none'"
         />
       )}
       <FlexBetween mt="0.25rem">

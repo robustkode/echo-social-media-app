@@ -94,6 +94,7 @@ const MyPostWidget = ({ picturePath, handleWrite }) => {
                   p="1rem"
                   width="100%"
                   sx={{ "&:hover": { cursor: "pointer" } }}
+                  textAlign="center"
                 >
                   <input {...getInputProps()} />
                   {!image ? (

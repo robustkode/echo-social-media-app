@@ -2,6 +2,7 @@ import { forwardRef, useEffect, useImperativeHandle, useState } from "react";
 import Post from "./Post";
 import { Box, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
+import ScrollToTop from "./ScrollTop";
 
 const Posts = forwardRef(
   ({ userId, handleBeFriend = null, editProfile }, ref) => {
@@ -64,20 +65,23 @@ const Posts = forwardRef(
             likes,
             comments,
           }) => (
-            <Post
-              key={_id}
-              postId={_id}
-              postUserId={userId}
-              name={`${firstName} ${lastName}`}
-              description={description}
-              location={location}
-              picturePath={picturePath}
-              userPicturePath={userPicturePath}
-              likes={likes}
-              comments={comments}
-              handleBeFriend={handleBeFriend}
-              handlePatchLike={handlePatchLike}
-            />
+            <>
+              <ScrollToTop />
+              <Post
+                key={_id}
+                postId={_id}
+                postUserId={userId}
+                name={`${firstName} ${lastName}`}
+                description={description}
+                location={location}
+                picturePath={picturePath}
+                userPicturePath={userPicturePath}
+                likes={likes}
+                comments={comments}
+                handleBeFriend={handleBeFriend}
+                handlePatchLike={handlePatchLike}
+              />
+            </>
           )
         )}
         {editProfile & !posts.length ? (

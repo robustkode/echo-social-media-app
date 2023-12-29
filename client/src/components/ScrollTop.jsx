@@ -3,7 +3,7 @@ import { Box, Fab, Zoom, useScrollTrigger } from "@mui/material";
 
 function ScrollToTop() {
   const trigger = useScrollTrigger({
-    threshold: 100,
+    threshold: 50,
   });
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
