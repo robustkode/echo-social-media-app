@@ -75,7 +75,7 @@ const EditProfile = () => {
     }
 
     const savedUserResponse = await fetch(
-      `http://localhost:3001/users/${_id}`,
+      `https://echo-social-media-app.vercel.app/users/${_id}`,
       {
         method: "PUT",
         body: formData,

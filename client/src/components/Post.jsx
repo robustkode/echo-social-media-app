@@ -36,14 +36,17 @@ const Post = ({
 
   const patchLike = async (e) => {
     e.stopPropagation();
-    const response = await fetch(`http://localhost:3001/posts/${postId}/like`, {
-      method: "PATCH",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ userId: _id }),
-    });
+    const response = await fetch(
+      `https://echo-social-media-app.vercel.app/posts/${postId}/like`,
+      {
+        method: "PATCH",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ userId: _id }),
+      }
+    );
     const updatedPost = await response.json();
     handlePatchLike(updatedPost);
   };
@@ -80,7 +83,7 @@ const Post = ({
           width="100%"
           height="auto"
           style={{ borderRadius: "0.75rem", marginTop: "0.75rem" }}
-          src={`http://localhost:3001/assets/${picturePath}`}
+          src={`https://echo-social-media-app.vercel.app/assets/${picturePath}`}
           onError="this.style.display = 'none'"
         />
       )}

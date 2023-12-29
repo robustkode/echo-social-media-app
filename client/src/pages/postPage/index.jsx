@@ -22,19 +22,25 @@ const PostPage = () => {
   const token = useSelector((state) => state.token);
 
   const getFriends = async (id) => {
-    const response = await fetch(`http://localhost:3001/users/${id}/friends`, {
-      method: "GET",
-      headers: { Authorization: `Bearer ${token}` },
-    });
+    const response = await fetch(
+      `https://echo-social-media-app.vercel.app/users/${id}/friends`,
+      {
+        method: "GET",
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    );
     const data = await response.json();
     setFriends(data);
   };
 
   const getUser = async (id) => {
-    const response = await fetch(`http://localhost:3001/users/${id}`, {
-      method: "GET",
-      headers: { Authorization: `Bearer ${token}` },
-    });
+    const response = await fetch(
+      `https://echo-social-media-app.vercel.app/users/${id}`,
+      {
+        method: "GET",
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    );
     const data = await response.json();
     setWriter(data);
   };

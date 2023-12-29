@@ -21,7 +21,7 @@ const CommentsWidget = ({ comments, postId, handleWrite }) => {
     };
 
     const response = await fetch(
-      `http://localhost:3001/posts/${postId}/comment`,
+      `https://echo-social-media-app.vercel.app/posts/${postId}/comment`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },

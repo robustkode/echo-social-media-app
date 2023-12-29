@@ -10,11 +10,14 @@ const LoginPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const login = async (values, onSubmitProps) => {
-    const loggedInResponse = await fetch("http://localhost:3001/auth/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(values),
-    });
+    const loggedInResponse = await fetch(
+      "https://echo-social-media-app.vercel.app/auth/login",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      }
+    );
     if (loggedInResponse.status === 200) {
       const loggedIn = await loggedInResponse.json();
       dispatch(

@@ -20,10 +20,13 @@ const HomePage = () => {
   const child1Ref = useRef(null);
 
   const getFriends = async () => {
-    const response = await fetch(`http://localhost:3001/users/${_id}/friends`, {
-      method: "GET",
-      headers: { Authorization: `Bearer ${token}` },
-    });
+    const response = await fetch(
+      `https://echo-social-media-app.vercel.app/users/${_id}/friends`,
+      {
+        method: "GET",
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    );
     const data = await response.json();
 
     dispatch(setFriends({ friends: data }));

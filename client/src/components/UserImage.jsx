@@ -10,7 +10,7 @@ const UserImage = ({ image, size = "60px" }) => {
         alt="user"
         src={
           image
-            ? `http://localhost:3001/assets/${image}`
+            ? `https://echo-social-media-app.vercel.app/assets/${image}`
             : "../assets/avatar.png"
         }
       />

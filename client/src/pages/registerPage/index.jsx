@@ -13,7 +13,7 @@ const RegisterPage = () => {
 
   const register = async (values, onSubmitProps) => {
     const savedUserResponse = await fetch(
-      "http://localhost:3001/auth/register",
+      "https://echo-social-media-app.vercel.app/auth/register",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },

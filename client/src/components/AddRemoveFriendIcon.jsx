@@ -28,8 +28,8 @@ const AddRemoveFriendIcon = ({ userId, handleBeFriend = null }) => {
     e.stopPropagation();
     const response = await fetch(
       handleBeFriend
-        ? `http://localhost:3001/users/${userId}/${_id}`
-        : `http://localhost:3001/users/${_id}/${userId}`,
+        ? `https://echo-social-media-app.vercel.app/users/${userId}/${_id}`
+        : `https://echo-social-media-app.vercel.app/users/${_id}/${userId}`,
       {
         method: "PATCH",
         headers: {
@@ -42,7 +42,7 @@ const AddRemoveFriendIcon = ({ userId, handleBeFriend = null }) => {
     if (handleBeFriend) {
       handleBeFriend(data);
       const response = await fetch(
-        `http://localhost:3001/users/${_id}/friends`,
+        `https://echo-social-media-app.vercel.app/users/${_id}/friends`,
         {
           method: "GET",
           headers: { Authorization: `Bearer ${token}` },
