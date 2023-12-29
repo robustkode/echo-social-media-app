@@ -43,7 +43,6 @@ const Post = ({
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
-          "Access-Control-Allow-Credentials": "true",
         },
         body: JSON.stringify({ userId: _id }),
       }
