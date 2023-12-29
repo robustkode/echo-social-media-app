@@ -35,6 +35,7 @@ const AddRemoveFriendIcon = ({ userId, handleBeFriend = null }) => {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
+          "Access-Control-Allow-Credentials": "true",
         },
       }
     );
@@ -73,5 +74,4 @@ const AddRemoveFriendIcon = ({ userId, handleBeFriend = null }) => {
   );
 };
 
-//
 export default AddRemoveFriendIcon;
