@@ -34,6 +34,7 @@ const EditProfile = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const isNonMobile = useMediaQuery("(min-width:600px)");
+  const dark = palette.neutral.dark;
 
   const token = useSelector((state) => state.token);
   const {
@@ -47,10 +48,7 @@ const EditProfile = () => {
     email,
   } = useSelector((state) => state.user);
 
-  const dark = palette.neutral.dark;
-  const medium = palette.neutral.medium;
-  const main = palette.neutral.main;
-
+  console.log(bio, location, occupation);
   const initialValues = {
     _id,
     firstName,
@@ -65,7 +63,11 @@ const EditProfile = () => {
   const updateProfile = async (values, onSubmitProps) => {
     const formData = new FormData();
     for (let value in values) {
-      formData.append(value, values[value]);
+      if (values[value]) {
+        formData.append(value, values[value]);
+      } else {
+        formData.append(value, "");
+      }
     }
 
     if (values.picture) {

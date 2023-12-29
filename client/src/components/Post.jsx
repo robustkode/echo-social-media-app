@@ -81,7 +81,7 @@ const Post = ({
           height="auto"
           style={{ borderRadius: "0.75rem", marginTop: "0.75rem" }}
           src={`http://localhost:3001/assets/${picturePath}`}
-          onerror="this.style.display = 'none'"
+          onError="this.style.display = 'none'"
         />
       )}
       <FlexBetween mt="0.25rem">

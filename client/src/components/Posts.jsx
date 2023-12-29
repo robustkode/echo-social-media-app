@@ -49,7 +49,7 @@ const Posts = forwardRef(
       updatedPosts[postIndex] = updatedPost;
       setPosts(updatedPosts);
     };
-
+    console.log(posts, "posts");
     return (
       <>
         {posts.map(
